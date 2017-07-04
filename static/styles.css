@@ -1,0 +1,56 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Background pattern from Subtle Patterns */
+    background-image: url("../static/img/sayagata-400px.png");
+    margin-bottom: 60px;
+}
+
+#text {
+    white-space: pre-wrap;
+    display: inline-block;
+    overflow: auto;
+    min-height: 200px;
+    resize: vertical;
+}
+
+#navbar {
+    font-size: 16px;
+    font-family: 'Playfair Display', serif;
+}
+
+.navbar-brand {
+  line-height: 12px;
+  padding-top: 9px;
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+}
+
+.navbar-brand small {
+  display: block;
+  padding-top: 7px;
+  font-size: 12px;
+}
+
+#lang {
+    padding-left: 0;
+    margin-left: 0;
+    min-width: 15em;
+    width: 10%;
+}
+
+#submit_text {
+    margin-top: 25px;
+}
+
+.footer {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}

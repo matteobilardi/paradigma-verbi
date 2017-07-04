@@ -1,0 +1,31 @@
+{
+    "ENG": {
+        "active": [
+            [1, "present_active"],
+            [1, "infinitive_active"],
+            [1, "perfect_active"],
+            [1, "supine"]
+        ],
+
+        "passive": [
+            [1, "present_passive"],
+            [1, "infinitive_passive"],
+            [1, "perfect_passive"]
+        ]
+    },
+
+    "ITA": {
+        "active": [
+            [2, "present_active"],
+            [1, "perfect_active"],
+            [1, "supine"],
+            [1, "infinitive_active"]
+        ],
+
+        "passive": [
+            [2, "present_passive"],
+            [1, "perfect_passive"],
+            [1, "infinitive_passive"]
+        ]
+    }
+}

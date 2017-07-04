@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block main %}
+<h3>What is {{ app_name }} about?</h3>
+<p>It is a website that enables the user to scan a Latin text for verbs and find their paradigms. It is also my first real world coding project and my final project for CS50x.
+</p>
+
+<h3>Why did I build it?</h3>
+<p>While initially at loss for ideas of what could my CS50x final project be, the idea of a paradigm finder that analyzed a full text instead of single words struck me when I was in the process of learning the paradigms of a piece of Latin poetry. This is something that is often asked of you in Italian high schools, especially during the first few years of studying it, and it can be a rather long task: you need to identify the verb, find its base form, search for it in a dictionary, and you will have found its paradigm, repeat for every verb. Even if you are using an online dictionary, this process involves multiple steps which can be automated. From this concept {{ app_name }} was born.
+</p>
+
+<h3>Should you use it?</h3>
+<p>It might seem odd that I am posing this question myself: being the developer one would think I should obviously answer <a href="https://www.youtube.com/watch?v=YwxnWi3mn6o" target="_blank">OF COURSE!</a> It is not that simple though, for 2 main reasons:</p>
+    <ol>
+        <li>{{ app_name }} may be detrimental for you learning process as finding paradigms is something that you should really be able to do if you intend to study Latin. Using this website before you master that first is not recommended.
+        </li>
+        <li>The website is far from perfect. Not only is it my first real world coding project but, having significantly less guidance, it is much more complex than typical CS50 problem sets. False positives, for example, are often present when trying to infer whether or not a word is a verb or paradigms might sometimes be wrong. If you want to help me make it better though, I encourage you to do so via <a href="https://www.github.com/matteogeek/paradigma_verbi" target="_blank">GitHub</a>
+        </li>
+    </ol>
+<p>Still, if those are non-issues to you, you definitely should use it.</p>
+
+
+<h3>Who am I?</h3>
+<p>My name is Matteo Bilardi. I am an Italian high school student who loves technology, enjoys solving logical problem, and hates doing repetitive tasks–especially when they could be automated. </p>
+
+<h3>Credits</h3>
+<p>This website's existence would not have been possible without <a href="http://www.verbix.com/" target="_blank">Verbix</a>'s <a href="http://www.verbix.com/find-verb/" target="_blank">verb finder</a> and <a href="http://www.verbix.com/languages/latin.shtml" target="_blank">conjugator</a>, and <a href="http://www.perseus.tufts.edu/hopper/" target="_blank">Perseus Digital Library</a>'s <a href="http://www.perseus.tufts.edu/hopper/search" target="_blank">Word Study Tool</a>. These publicly available tools are essential to the process of analysis that each word must go through to make all of this work. Furthermore, I am using an icon from <a href="https://linearicons.com" target="_blank">Linearicons</a> created by <a href="https://perxis.com" target="_blank">Perxis</a> as favicon of this site.
+</p>
+
+
+{% endblock %}

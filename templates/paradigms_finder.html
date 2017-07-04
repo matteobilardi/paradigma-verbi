@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="form-group">
+    <label class="control-label">Text to be searched for paradigms</label>
+    <div class="form-control" contenteditable="true" id="text"></div>
+
+    <div class="row">
+        <div class="col-xs-10">
+            {{ wtf.quick_form(language_form) }}
+        </div>
+        <div class="col-xs-2">
+            <button id="submit_text" class="btn btn-default pull-right">Find Paradigms</button>
+        </div>
+    </div>
+</div>
+<h6>WARNING: The service is not perfect: false positives are frequent and not every paradigm is right. Use at your own risk.</h6>
+<div id="paradigms"></div>
+{% endblock %}
