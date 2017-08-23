@@ -11,7 +11,7 @@ class ContactForm(FlaskForm):
         ]
     )
 
-    text = wtforms.TextAreaField("What would you like to tell us?", [wtforms.validators.InputRequired("Please enter some text")])
+    text = wtforms.TextAreaField("What would you like to tell me?", [wtforms.validators.InputRequired("Please enter some text")])
     submit = wtforms.SubmitField("Send")
 
 
