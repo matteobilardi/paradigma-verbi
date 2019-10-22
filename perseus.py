@@ -5,7 +5,6 @@ perseus_lookup_url = "http://www.perseus.tufts.edu/hopper/xmlmorph?lang=la&looku
 
 
 def find_base_forms(word):
-
     request = requests.get(
         "{}{}".format(perseus_lookup_url, word),
         timeout=5
