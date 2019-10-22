@@ -24,10 +24,8 @@ def find_base_forms(word):
 
     base_forms = []
     for word in words_found:
-        # It also checks if last character is a digit in order to exclude results which have the same base form
+        # Checks if last character is a digit in order to exclude results which have the same base form
         # volo, for example, would return ["volo", "volo2", "volo3"] instead of  ["volo"]
-
-        # maybe add: or word["pos"] == "part"
         if word["pos"] == "verb" and not word["lemma"][-1].isdigit() and word["lemma"] not in base_forms:
             base_forms.append(word["lemma"])
     return base_forms
