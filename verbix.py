@@ -31,11 +31,11 @@ def find_base_forms(word):
     Ask verbix for the possible base forms of word assuming word is a conjugated
     form of a verb.
     If the base form is found, assume the word is not a verb and return an empty
-    list else, return the possible base forms of verb word.
+    list else return the possible base forms of verb word.
     """
-
+    # v1 of the api seems to have more verbs
     request = requests.get(
-        "http://api.verbix.com/finder/json/{}/v1/lat/{}".format(os.environ.get("VERBIX_API_KEY"), word),  # v1 of the api seems to have more verbs
+        "http://api.verbix.com/finder/json/{}/v1/lat/{}".format(os.environ.get("VERBIX_API_KEY"), word),
         headers=browser_headers,
         timeout=5
     )
@@ -71,7 +71,7 @@ def full_paradigm(verb):
         tense_table = page.find(id=tense)
         try:
             rows = tense_table.find_all("tr")
-            if rows:  # If there is more than one verb in tense_table (e.g. if the verb is not infinitive or supine)
+            if rows:  # there is more than one verb in tense_table (e.g. if the verb is not infinitive or supine)
                 number_of_persons = 1
                 if tense == "present_active" or tense == "present_passive":  # If first and second person singular needed
                     number_of_persons = 2
