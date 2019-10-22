@@ -24,7 +24,7 @@ python-dotenv==0.6.4
 python-engineio==1.7.0
 python-socketio==1.7.6
 redis==2.10.5
-requests==2.18.1
+requests==2.20.0
 six==1.10.0
 urllib3==1.21.1
 visitor==0.1.3
