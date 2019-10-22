@@ -11,9 +11,6 @@ import forms
 import json
 import paradigm
 
-#import logging
-#logging.basicConfig(level='DEBUG')
-
 eventlet.monkey_patch()
 
 app = Flask(__name__)
@@ -43,7 +40,6 @@ def conjugation_template():
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
     contact_form = forms.ContactForm()
-
     if request.method == "POST" and contact_form.validate_on_submit():
         @copy_current_request_context
         def send_email():
@@ -111,29 +107,11 @@ def analyze(data):
         t0 = time.time()
         # imap runs the analysis concurrently but returns their result in order
         for i, verb in enumerate(pool.imap(sendable_verb_analysis, text_words, positions, [lang] * len(text_words))):
-
             if verb:
                 emit("verb_from_server", verb)
+                
             # Sleep every num_words_per_analysis
             if i % app.config["NUM_WORDS_PER_ANALYSIS"] == 0:
                 eventlet.sleep(0.1)
-            #print(str((time.time() - t0) / len(text_words)), file=sys.stderr)
-        print(str((time.time()-t0) / len(text_words)), file=sys.stderr)
 
-    # @copy_current_request_context
-    # def send_verbs_together(text_words):
-    #     t0 = time.time()
-    #     verbs_to_send = []
-    #     for i, verb in enumerate(pool.imap(word_analysis,
-    #                                        text_words)):  # imap runs the analysis concurrently but returns their result in order
-    #         if verb:
-    #             verbs_to_send.append(verb)
-    #
-    #         # Sleep every num_words_per_analysis
-    #         if i % num_words_per_analysis == 0:
-    #             eventlet.sleep(0.1)
-    #             if verbs_to_send:
-    #                 emit("verbs_from_server", verbs_to_send)
-    #             verbs_to_send = []
-    #     print(str((time.time() - t0) / len(text_words)), file=sys.stderr)
     eventlet.spawn_n(send_verbs)
